@@ -1,0 +1,37 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    html {font-family: Arial; display: inline-block; text-align: center;}
+    h2 {font-size: 3.0rem;}
+    p {font-size: 3.0rem;}
+    body {max-width: 600px; margin:0px auto; padding-bottom: 25px;}
+    .switch {position: relative; display: inline-block; width: 120px; height: 68px} 
+    .switch input {display: none}
+    .slider {position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; border-radius: 34px}
+    .slider:before {position: absolute; content: ""; height: 52px; width: 52px; left: 8px; bottom: 8px; background-color: #fff; -webkit-transition: .4s; transition: .4s; border-radius: 68px}
+    input:checked+.slider {background-color: #2196F3}
+    input:checked+.slider:before {-webkit-transform: translateX(52px); -ms-transform: translateX(52px); transform: translateX(52px)}
+  </style>
+  
+</head>
+<body>
+<div class="data">
+  <h2>Pametni rastlinjak</h2>
+  <h4 id="time"></h4>
+  <h4 id="temp"></h4>
+  <h4 id="humidity"></h4>
+  <!--<h4 id="moisture"></h4> DEBUG -->
+  <h4 id="waterneed"></h4>
+  <h4 id="wateringtime"></h4>
+  <h4>Ventilator</h4><label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" id="1"><span class="slider"></span></label><br>
+  <h4>Črpalka</h4><label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" id="2"><span class="slider"></span></label><br>
+  <h4>Luč</h4><label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" id="3"><span class="slider"></span></label><br>
+  <h4>Ročni nadzor</h4><label class="switch"><input type="checkbox" onchange="toggleCheckbox(this)" id="4"><span class="slider"></span></label><br>
+  <div id="chart"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
